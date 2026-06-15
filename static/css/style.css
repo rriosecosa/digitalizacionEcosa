@@ -1,0 +1,405 @@
+:root {
+  --primary: #0d5c3b;
+  --secondary: #24a56a;
+
+  --gray: #f5f7f8;
+
+  --dark: #1f2937;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--dark);
+}
+
+.btn-ecosa {
+  background: var(--primary);
+  color: white;
+
+  border-radius: 12px;
+
+  padding: 12px 20px;
+}
+
+.btn-ecosa:hover {
+  background: #08462c;
+  color: white;
+}
+
+.section-title {
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+.card-custom {
+  border: none;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+}
+
+.footer-ecosa {
+  background: #083d28;
+
+  color: white;
+
+  padding: 60px 0;
+}
+
+.footer-ecosa ul {
+  list-style: none;
+
+  padding: 0;
+}
+
+.footer-ecosa li {
+  margin-bottom: 8px;
+}
+.catalogo-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+.sidebar-filtros {
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-filtros a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 10px;
+}
+
+.sidebar-filtros a:hover {
+  background: #f5f5f5;
+}
+
+.product-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 180px;
+}
+
+.product-body {
+  padding: 20px;
+}
+
+.catalogo-banner {
+  background: #0d5c3b;
+  color: white;
+  padding: 60px 0;
+}
+
+@media (max-width: 991px) {
+  .catalogo-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.catalogo-banner-home {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.catalogo-link {
+  display: block;
+}
+
+.catalogo-banner-img {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.catalogo-banner-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-filtros {
+  width: 280px;
+  min-width: 280px;
+}
+
+.sidebar-filtros a {
+  transition: 0.2s;
+}
+
+.sidebar-filtros a:hover {
+  color: #198754 !important;
+  transform: translateX(4px);
+}
+
+.catalogo-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+  .catalogo-layout {
+    flex-direction: column;
+  }
+
+  .sidebar-filtros {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+.catalogo-banner-home {
+  background: linear-gradient(135deg, #0f5132, #198754);
+  padding: 80px 0;
+  color: white;
+}
+
+.catalogo-banner-home h1 {
+  font-size: 3rem;
+}
+
+.product-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  background: white;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-image {
+  height: 220px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+}
+
+.product-title {
+  min-height: 48px;
+}
+
+.btn-ecosa {
+  background: #198754;
+  border: none;
+  color: white;
+}
+
+.btn-ecosa:hover {
+  background: #146c43;
+  color: white;
+}
+
+.catalogo-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+/* =========================
+   CATALOGO ECOSA V2
+========================= */
+
+.catalogo-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+.sidebar-filtros {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  position: sticky;
+  top: 100px;
+}
+
+.filtro-scroll {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.filtro-scroll a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.filtro-scroll a:hover {
+  background: #f5f7f8;
+  color: #198754;
+}
+
+.product-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  height: 220px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+.product-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category {
+  background: #eef8f2;
+  color: #198754;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: .75rem;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.product-brand {
+  font-size: .8rem;
+  font-weight: 600;
+  color: #198754;
+}
+
+.product-title {
+  min-height: 60px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.product-code {
+  color: #6c757d;
+  font-size: .9rem;
+  margin-bottom: 15px;
+}
+
+.pagination {
+  margin-top: 50px;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+
+  .row.g-4 > .col-lg-3 {
+    width: 33.333%;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .catalogo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-filtros {
+    position: static;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .row.g-4 > .col-lg-3,
+  .row.g-4 > .col-md-4,
+  .row.g-4 > .col-sm-6 {
+    width: 50%;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .row.g-4 > div {
+    width: 100%;
+  }
+
+}
+.pagination {
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pagination .page-link {
+    border-radius: 10px;
+    border: none;
+    color: #0d5c3b;
+    font-weight: 600;
+}
+
+.pagination .active .page-link {
+    background: #0d5c3b;
+    color: white;
+}

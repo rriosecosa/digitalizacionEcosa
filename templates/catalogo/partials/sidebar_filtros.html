@@ -1,0 +1,67 @@
+<div class="sidebar-filtros">
+
+    <h5 class="fw-bold mb-4">
+
+        Filtros
+
+    </h5>
+
+    <div class="filtro-grupo">
+
+        <h6 class="filtro-titulo">
+
+            Categorías
+        </h6>
+
+        <div class="filtro-scroll">
+
+            {% for categoria in categorias %}
+
+                <a href="?categoria={{ categoria.id }}">
+
+                    <span>
+
+                        {{ categoria.titulo }}
+
+                    </span>
+
+                    <span class="badge bg-light text-dark">
+
+                        {{ categoria.productos.count }}
+
+                    </span>
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="filtro-grupo">
+
+        <h6 class="filtro-titulo">
+
+            Marcas
+        </h6>
+
+        <div class="filtro-scroll">
+
+            {% for marca in marcas %}
+
+                <a href="?marca={{ marca.id }}">
+
+                    {{ marca.marca }}
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
