@@ -433,3 +433,24 @@ body {
   color: white;
   padding: 60px 0;
 }
+.hero-historia {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-historia h1 {
+    line-height: 1.1;
+}
+
+.hero-historia .badge {
+    font-size: .95rem;
+}
+
+.cta-final .btn {
+    transition: .3s;
+}
+
+.cta-final .btn:hover {
+    transform: translateY(-3px);
+}

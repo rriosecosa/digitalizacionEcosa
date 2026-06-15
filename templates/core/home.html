@@ -1,129 +1,355 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
 
 <!-- HERO -->
 
 <section class="hero py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-success">
-          Más de 30 años entregando soluciones para el sector ferretero.
-        </h1>
 
-        <p class="lead mt-4 text-muted">
-          ECOSA pone a disposición de sus clientes un amplio catálogo de
-          productos y marcas reconocidas para ferreterías, industrias y
-          constructoras.
-        </p>
+    <div class="container">
 
-        <div class="d-flex gap-3 mt-4">
-          <a href="{% url 'catalogo' %}" class="btn btn-ecosa">
-            Ver Catálogo
-          </a>
+        <div class="row align-items-center">
 
-          <a href="#contacto" class="btn btn-outline-success">
-            Hablar con un asesor
-          </a>
+            <div
+                class="col-lg-6"
+                data-aos="fade-right"
+            >
+
+                <h1 class="display-4 fw-bold text-success">
+
+                    Más de 30 años entregando soluciones para el sector ferretero.
+
+                </h1>
+
+                <p class="lead mt-4 text-muted">
+
+                    ECOSA pone a disposición de sus clientes un amplio catálogo
+                    de productos y marcas reconocidas para ferreterías,
+                    industrias y constructoras.
+
+                </p>
+
+                <div class="d-flex gap-3 mt-4">
+
+                    <a
+                        href="{% url 'catalogo' %}"
+                        class="btn btn-ecosa"
+                    >
+
+                        Ver Catálogo
+
+                    </a>
+
+                    <a
+                        href="#contacto"
+                        class="btn btn-outline-success"
+                    >
+
+                        Hablar con un asesor
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div
+                class="col-lg-6 text-center"
+                data-aos="fade-left"
+            >
+
+                <img
+                    src="{% static 'images/hero-tools.png' %}"
+                    class="img-fluid"
+                    alt="ECOSA"
+                >
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="col-lg-6 text-center">
-        <img src="{% static 'images/hero-tools.png' %}" class="img-fluid" />
-      </div>
     </div>
-  </div>
+
 </section>
+
+
+<!-- BENEFICIOS -->
+
+<section class="py-4 bg-white">
+
+    <div class="container">
+
+        <div class="row g-4 text-center">
+
+            <div
+                class="col-md-3"
+                data-aos="zoom-in"
+            >
+
+                <div class="beneficio-card">
+
+                    <h5>✓ Amplio Catálogo</h5>
+
+                    <p class="mb-0">
+
+                        Más de 3.000 productos disponibles.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="col-md-3"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+            >
+
+                <div class="beneficio-card">
+
+                    <h5>✓ Marcas Reconocidas</h5>
+
+                    <p class="mb-0">
+
+                        Productos de calidad comprobada.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="col-md-3"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+            >
+
+                <div class="beneficio-card">
+
+                    <h5>✓ Atención Comercial</h5>
+
+                    <p class="mb-0">
+
+                        Asesoría personalizada.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div
+                class="col-md-3"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+            >
+
+                <div class="beneficio-card">
+
+                    <h5>✓ Cobertura Nacional</h5>
+
+                    <p class="mb-0">
+
+                        Distribución y atención a nivel nacional.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- MARCAS -->
 
 <section class="py-5">
-  <div class="container">
-    <h2 class="section-title text-center mb-5">Nuestras Marcas</h2>
 
-    <div class="row g-4">
-      {% for marca in marcas %}
+    <div class="container">
 
-      <div class="col-lg-2 col-md-4 col-6">
-        <div class="card-custom text-center p-4 h-100">
-          {% if marca.logo %}
+        <h2
+            class="section-title text-center mb-5"
+            data-aos="fade-up"
+        >
 
-          <img
-            src="{{ marca.logo.url }}"
-            class="img-fluid mb-3"
-            style="height: 70px; object-fit: contain"
-          />
+            Nuestras Marcas
 
-          {% else %}
+        </h2>
 
-          <h5>{{ marca.nombre }}</h5>
+        <div class="row g-4">
 
-          {% endif %}
+            {% for marca in marcas %}
 
-          
+            <div
+                class="col-lg-2 col-md-4 col-6"
+                data-aos="zoom-in"
+            >
+
+                <div class="card-custom text-center p-4 h-100">
+
+                    {% if marca.logo %}
+
+                    <img
+                        src="{{ marca.logo.url }}"
+                        class="img-fluid mb-3"
+                        style="height:70px; object-fit:contain"
+                    >
+
+                    {% else %}
+
+                    <h5>
+
+                        {{ marca.nombre }}
+
+                    </h5>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
         </div>
-      </div>
 
-      {% endfor %}
     </div>
-  </div>
+
 </section>
+
 
 <!-- ESTADISTICAS -->
 
 <section class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-4">
-        <small class="text-success fw-bold"> DESDE 1992 </small>
-
-        <h2 class="fw-bold mt-2">
-          Más de tres décadas abasteciendo al sector ferretero.
-        </h2>
-
-        <p class="text-muted">
-          ECOSA se ha consolidado como un importador y distribuidor confiable
-          para ferreterías, industrias y constructoras.
-        </p>
-      </div>
-
-      <div class="col-lg-8">
-        <div class="row text-center">
-          <div class="col-md-3">
-            <h2 class="text-success fw-bold">+30</h2>
-
-            <p>Años de experiencia</p>
-          </div>
-
-          <div class="col-md-3">
-            <h2 class="text-success fw-bold">+3000</h2>
-
-            <p>Productos disponibles</p>
-          </div>
-
-          <div class="col-md-3">
-            <h2 class="text-success fw-bold">+20</h2>
-
-            <p>Marcas internacionales</p>
-          </div>
-
-          <div class="col-md-3">
-            <h2 class="text-success fw-bold">100%</h2>
-
-            <p>Atención especializada</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BANNER CATALOGO -->
-
-<section class="catalogo-banner-home">
 
     <div class="container">
 
-        <a href="{% url 'catalogo' %}" class="catalogo-link">
+        <div class="row align-items-center">
+
+            <div
+                class="col-lg-4"
+                data-aos="fade-right"
+            >
+
+                <small class="text-success fw-bold">
+
+                    DESDE 1992
+
+                </small>
+
+                <h2 class="fw-bold mt-2">
+
+                    Más de tres décadas abasteciendo al sector ferretero.
+
+                </h2>
+
+                <p class="text-muted">
+
+                    ECOSA se ha consolidado como un importador y distribuidor
+                    confiable para ferreterías, industrias y constructoras.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-8">
+
+                <div class="row text-center">
+
+                    <div
+                        class="col-md-3"
+                        data-aos="fade-up"
+                    >
+
+                        <h2 class="text-success fw-bold">
+
+                            +30
+
+                        </h2>
+
+                        <p>Años de experiencia</p>
+
+                    </div>
+
+                    <div
+                        class="col-md-3"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+
+                        <h2 class="text-success fw-bold">
+
+                            +3000
+
+                        </h2>
+
+                        <p>Productos disponibles</p>
+
+                    </div>
+
+                    <div
+                        class="col-md-3"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+
+                        <h2 class="text-success fw-bold">
+
+                            +20
+
+                        </h2>
+
+                        <p>Marcas internacionales</p>
+
+                    </div>
+
+                    <div
+                        class="col-md-3"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+
+                        <h2 class="text-success fw-bold">
+
+                            100%
+
+                        </h2>
+
+                        <p>Atención especializada</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BANNER -->
+
+<section
+    class="catalogo-banner-home py-5"
+    data-aos="zoom-in"
+>
+
+    <div class="container">
+
+        <a
+            href="{% url 'catalogo' %}"
+            class="catalogo-link"
+        >
 
             <img
                 src="{% static 'images/catalogo-banner.png' %}"
@@ -137,36 +363,70 @@
 
 </section>
 
+
 <!-- CONTACTO -->
 
-<section id="contacto" class="py-5">
-  <div class="container">
-    <div class="card-custom p-5">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h3>¿Necesitas ayuda para encontrar un producto?</h3>
+<section
+    id="contacto"
+    class="py-5"
+>
 
-          <p class="text-muted mb-0">
-            Nuestro equipo comercial está disponible para ayudarte y asesorarte.
-          </p>
+    <div class="container">
+
+        <div
+            class="card-custom p-5"
+            data-aos="fade-up"
+        >
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <h3>
+
+                        ¿Necesitas ayuda para encontrar un producto?
+
+                    </h3>
+
+                    <p class="text-muted mb-0">
+
+                        Nuestro equipo comercial está disponible para ayudarte
+                        y asesorarte.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-end">
+
+                    <a
+                        href="https://wa.me/56948108449"
+                        target="_blank"
+                        class="btn btn-success me-2"
+                    >
+
+                        Hablar con un asesor
+
+                    </a>
+
+                    <a
+                        href="mailto:rrwebworks@gmail.com"
+                        class="btn btn-outline-success"
+                    >
+
+                        Solicitar información
+
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="col-lg-4 text-end">
-          <a
-            href="https://wa.me/56948108449"
-            target="_blank"
-            class="btn btn-success me-2"
-          >
-            Hablar con un asesor
-          </a>
-
-          <a href="mailto:rrwebworks@gmail.com" class="btn btn-outline-success">
-            Solicitar información
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
+
 </section>
 
 {% endblock %}
+

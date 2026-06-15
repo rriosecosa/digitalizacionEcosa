@@ -1,174 +1,408 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
-<!-- ===================================== -->
+{% block content %}
 
-<!-- HERO PRINCIPAL -->
+<!-- HERO -->
 
-<!-- ===================================== -->
-
-<section class="hero-historia">
+<section
+  class="hero-historia"
+  data-aos="fade"
+  data-aos-duration="1200"
+>
   <div class="overlay"></div>
+
   <div class="container position-relative">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-white">
-        <p class="text-success fw-semibold mb-2">
-          Conectamos soluciones, construimos confianza
-        </p>
 
-        <h1 class="display-3 fw-bold mb-4">Nuestra Historia</h1>
 
-        <p class="lead">
-          Más de 30 años conectando innovación, calidad y confianza con el
-          mercado ferretero chileno.
-        </p>
-      </div>
+<div class="row align-items-center">
+
+  <div
+    class="col-lg-7 text-white"
+    data-aos="fade-right"
+    data-aos-duration="1000"
+  >
+
+    <p class="text-success fw-semibold mb-2">
+      Conectamos soluciones, construimos confianza
+    </p>
+
+    <h1 class="display-2 fw-bold mb-4">
+      Nuestra Historia
+    </h1>
+
+    <p class="lead">
+      Más de 30 años conectando innovación, calidad y confianza con el
+      mercado ferretero chileno.
+    </p>
+
+    <div
+      class="d-flex gap-3 mt-4 flex-wrap"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+
+      <span class="badge bg-success px-3 py-2">
+        +30 años de experiencia
+      </span>
+
+      <span class="badge bg-light text-dark px-3 py-2">
+        Importación y distribución
+      </span>
+
     </div>
-  </div>
-</section>
 
-<!-- ===================================== -->
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
 
 <!-- HISTORIA -->
 
-<!-- ===================================== -->
-
 <section class="py-5">
+
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4">
-        <img
-          src="{% static 'images/background.png' %}"
-          class="img-fluid rounded shadow"
-          alt="Historia ECOSA"
-        />
-      </div>
 
-      <div class="col-lg-6">
-        <span class="badge bg-success mb-3"> DESDE 1992 </span>
 
-        <h2 class="fw-bold mb-4">Nuestra Trayectoria</h2>
+<div class="row align-items-center">
 
-        <p>
-          Importadora ECO S.A. es una empresa familiar fundada en 1992 con el
-          propósito de ofrecer al mercado ferretero alternativas de
-          abastecimiento novedosas y variadas.
-        </p>
+  <div
+    class="col-lg-6 mb-4"
+    data-aos="fade-right"
+  >
 
-        <p>
-          A lo largo de nuestra historia hemos fortalecido relaciones
-          estratégicas con proveedores nacionales e internacionales,
-          permitiéndonos entregar soluciones confiables y productos de calidad a
-          nuestros clientes.
-        </p>
-      </div>
-    </div>
+    <img
+      src="{% static 'images/background.png' %}"
+      class="img-fluid rounded-4 shadow-lg"
+      alt="Historia ECOSA"
+    >
+
   </div>
-</section>
 
-<!-- ===================================== -->
+  <div
+    class="col-lg-6"
+    data-aos="fade-left"
+  >
+
+    <span class="badge bg-success mb-3">
+      DESDE 1992
+    </span>
+
+    <h2 class="fw-bold mb-4">
+      Nuestra Trayectoria
+    </h2>
+
+    <p>
+      Importadora ECO S.A. es una empresa familiar fundada en 1992 con el
+      propósito de ofrecer al mercado ferretero alternativas de
+      abastecimiento novedosas y variadas.
+    </p>
+
+    <p>
+      A lo largo de nuestra historia hemos fortalecido relaciones
+      estratégicas con proveedores nacionales e internacionales,
+      permitiéndonos entregar soluciones confiables y productos de calidad
+      a nuestros clientes.
+    </p>
+
+    <div class="row mt-4">
+
+      <div class="col-4 text-center">
+
+        <h3 class="fw-bold text-success">
+          +30
+        </h3>
+
+        <small>Años</small>
+
+      </div>
+
+      <div class="col-4 text-center">
+
+        <h3 class="fw-bold text-success">
+          +3000
+        </h3>
+
+        <small>Productos</small>
+
+      </div>
+
+      <div class="col-4 text-center">
+
+        <h3 class="fw-bold text-success">
+          +20
+        </h3>
+
+        <small>Marcas</small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</section>
 
 <!-- MISION Y VISION -->
 
-<!-- ===================================== -->
-
 <section class="bg-light py-5">
+
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Nuestro Propósito</h2>
-      <p class="text-muted">Los pilares que guían nuestro crecimiento.</p>
-    </div>
 
-    <div class="row g-4">
-      <div class="col-lg-6">
-        <div class="card-custom p-4 h-100">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-bullseye fs-1 text-success me-4"></i>
 
-            <div>
-              <h3>Misión</h3>
+<div
+  class="text-center mb-5"
+  data-aos="fade-up"
+>
 
-              <p>
-                Mantener una relación cercana y directa entre proveedores
-                extranjeros, ECO S.A. y nuestros clientes.
-              </p>
-            </div>
-          </div>
+  <h2 class="fw-bold">
+    Nuestro Propósito
+  </h2>
+
+  <p class="text-muted">
+    Los pilares que guían nuestro crecimiento.
+  </p>
+
+</div>
+
+<div class="row g-4">
+
+  <div
+    class="col-lg-6"
+    data-aos="fade-up"
+    data-aos-delay="100"
+  >
+
+    <div
+      class="card-custom p-4 h-100"
+      style="border-top:4px solid #198754;"
+    >
+
+      <div class="d-flex align-items-start">
+
+        <i class="bi bi-bullseye fs-1 text-success me-4"></i>
+
+        <div>
+
+          <h3>Misión</h3>
+
+          <p>
+            Mantener una relación cercana y directa entre proveedores
+            extranjeros, ECO S.A. y nuestros clientes.
+          </p>
+
         </div>
+
       </div>
 
-      <div class="col-lg-6">
-        <div class="card-custom p-4 h-100">
-          <div class="d-flex align-items-start">
-            <i class="bi bi-eye fs-1 text-primary me-4"></i>
-
-            <div>
-              <h3>Visión</h3>
-
-              <p>
-                Ser la empresa líder en la comercialización de productos
-                nacionales y extranjeros para el rubro ferretero.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+
   </div>
-</section>
 
-<!-- ===================================== -->
+  <div
+    class="col-lg-6"
+    data-aos="fade-up"
+    data-aos-delay="250"
+  >
+
+    <div
+      class="card-custom p-4 h-100"
+      style="border-top:4px solid #0d5c3b;"
+    >
+
+      <div class="d-flex align-items-start">
+
+        <i class="bi bi-eye fs-1 text-primary me-4"></i>
+
+        <div>
+
+          <h3>Visión</h3>
+
+          <p>
+            Ser la empresa líder en la comercialización de productos
+            nacionales y extranjeros para el rubro ferretero.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
 
 <!-- VALORES -->
 
-<!-- ===================================== -->
-
 <section class="py-5">
+
   <div class="container">
-    <div class="row text-center">
-      <div class="col-md-3">
-        <i class="bi bi-award fs-1 text-success"></i>
-        <h4 class="mt-3">Calidad</h4>
-      </div>
 
-      <div class="col-md-3">
-        <i class="bi bi-people fs-1 text-success"></i>
-        <h4 class="mt-3">Compromiso</h4>
-      </div>
 
-      <div class="col-md-3">
-        <i class="bi bi-hand-thumbs-up fs-1 text-success"></i>
-        <h4 class="mt-3">Confianza</h4>
-      </div>
+<div class="text-center mb-5">
 
-      <div class="col-md-3">
-        <i class="bi bi-lightbulb fs-1 text-success"></i>
-        <h4 class="mt-3">Innovación</h4>
-      </div>
+  <h2 class="fw-bold">
+    Nuestros Valores
+  </h2>
+
+  <p class="text-muted">
+    Los principios que inspiran nuestro trabajo diario.
+  </p>
+
+</div>
+
+<div class="row g-4">
+
+  <div
+    class="col-md-3"
+    data-aos="zoom-in"
+    data-aos-delay="100"
+  >
+
+    <div class="card-custom p-4 h-100 text-center">
+
+      <i class="bi bi-award fs-1 text-success"></i>
+
+      <h4 class="mt-3">
+        Calidad
+      </h4>
+
+      <p class="text-muted small mb-0">
+        Productos y servicios con altos estándares.
+      </p>
+
     </div>
-  </div>
-</section>
 
-<!-- ===================================== -->
+  </div>
+
+  <div
+    class="col-md-3"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+  >
+
+    <div class="card-custom p-4 h-100 text-center">
+
+      <i class="bi bi-people fs-1 text-success"></i>
+
+      <h4 class="mt-3">
+        Compromiso
+      </h4>
+
+      <p class="text-muted small mb-0">
+        Relaciones duraderas con nuestros clientes.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div
+    class="col-md-3"
+    data-aos="zoom-in"
+    data-aos-delay="300"
+  >
+
+    <div class="card-custom p-4 h-100 text-center">
+
+      <i class="bi bi-hand-thumbs-up fs-1 text-success"></i>
+
+      <h4 class="mt-3">
+        Confianza
+      </h4>
+
+      <p class="text-muted small mb-0">
+        Transparencia y cercanía en cada proyecto.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div
+    class="col-md-3"
+    data-aos="zoom-in"
+    data-aos-delay="400"
+  >
+
+    <div class="card-custom p-4 h-100 text-center">
+
+      <i class="bi bi-lightbulb fs-1 text-success"></i>
+
+      <h4 class="mt-3">
+        Innovación
+      </h4>
+
+      <p class="text-muted small mb-0">
+        Incorporamos constantemente nuevas soluciones.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
 
 <!-- CTA FINAL -->
 
-<!-- ===================================== -->
+<section
+  class="cta-final"
+  data-aos="zoom-in"
+>
 
-<section class="cta-final">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-4">
-        <h2 class="fw-bold mb-0">¡Seguimos Trabajando!</h2>
-      </div>
 
-      <div class="col-lg-8">
-        <p class="lead mb-0">
-          Construyendo relaciones de largo plazo, incorporando nuevos productos
-          y fortaleciendo nuestro compromiso con el mercado ferretero.
-        </p>
-      </div>
-    </div>
+
+<div class="row align-items-center">
+
+  <div class="col-lg-7">
+
+    <h2 class="fw-bold mb-3">
+      ¡Seguimos Trabajando!
+    </h2>
+
+    <p class="lead mb-0">
+      Construyendo relaciones de largo plazo, incorporando nuevos productos
+      y fortaleciendo nuestro compromiso con el mercado ferretero.
+    </p>
+
   </div>
+
+  <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+
+    <a
+      href="{% url 'catalogo' %}"
+      class="btn btn-light btn-lg rounded-pill px-5"
+    >
+      Ver Catálogo
+    </a>
+
+  </div>
+
+</div>
+
+
+  </div>
+
 </section>
 
 {% endblock %}
