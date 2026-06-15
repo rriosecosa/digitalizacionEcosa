@@ -37,3 +37,8 @@ class HomeView(TemplateView):
         )
 
         return context
+
+
+class NosotrosView(TemplateView):
+
+    template_name = 'nosotros/nosotros.html'

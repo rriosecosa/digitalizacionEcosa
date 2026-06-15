@@ -78,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wms2',
-        'USER': 'root',
-        'PASSWORD': 'root1234',
-        'HOST': 'localhost',
+        'USER': 'ecosa',
+        'PASSWORD': '15062026',
+        'HOST': '192.168.0.115',
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',

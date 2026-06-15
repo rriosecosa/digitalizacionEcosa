@@ -1,14 +1,70 @@
+# Entornos virtuales
 venv/
-__pycache__/
-*.pyc
+env/
+.venv/
 
-db.sqlite3
-
+# Variables de entorno
 .env
+.env.*
 
-media/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Django
+db.sqlite3
+*.sqlite3
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# VS Code
 .vscode/
+
+# PyCharm
 .idea/
 
-*.log
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Archivos de distribución
+build/
+dist/
+*.egg-info/
+
+# Cobertura y testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Archivos estáticos generados
+staticfiles/
+media/
+
+# Migrations compiladas
+**/migrations/*.pyc
+
+# Archivos locales
+local_settings.py
+settings_local.py
+
+# Certificados
+*.pem
+*.key
+
+# Node (si agregas frontend más adelante)
+node_modules/
+
+# PostgreSQL dumps y backups
+*.sql
+*.dump
+*.backup
