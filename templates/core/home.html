@@ -1,432 +1,265 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <!-- HERO -->
 
 <section class="hero py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h1 class="display-4 fw-bold text-success">
+          Más de 30 años entregando soluciones para el sector ferretero.
+        </h1>
 
-    <div class="container">
+        <p class="lead mt-4 text-muted">
+          ECOSA pone a disposición de sus clientes un amplio catálogo de
+          productos y marcas reconocidas para ferreterías, industrias y
+          constructoras.
+        </p>
 
-        <div class="row align-items-center">
+        <div class="d-flex gap-3 mt-4">
+          <a href="{% url 'catalogo' %}" class="btn btn-ecosa">
+            Ver Catálogo
+          </a>
 
-            <div
-                class="col-lg-6"
-                data-aos="fade-right"
-            >
-
-                <h1 class="display-4 fw-bold text-success">
-
-                    Más de 30 años entregando soluciones para el sector ferretero.
-
-                </h1>
-
-                <p class="lead mt-4 text-muted">
-
-                    ECOSA pone a disposición de sus clientes un amplio catálogo
-                    de productos y marcas reconocidas para ferreterías,
-                    industrias y constructoras.
-
-                </p>
-
-                <div class="d-flex gap-3 mt-4">
-
-                    <a
-                        href="{% url 'catalogo' %}"
-                        class="btn btn-ecosa"
-                    >
-
-                        Ver Catálogo
-
-                    </a>
-
-                    <a
-                        href="#contacto"
-                        class="btn btn-outline-success"
-                    >
-
-                        Hablar con un asesor
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div
-                class="col-lg-6 text-center"
-                data-aos="fade-left"
-            >
-
-                <img
-                    src="{% static 'images/hero-tools.png' %}"
-                    class="img-fluid"
-                    alt="ECOSA"
-                >
-
-            </div>
-
+          <a href="#contacto" class="btn btn-outline-success">
+            Hablar con un asesor
+          </a>
         </div>
+      </div>
 
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <img
+          src="{% static 'images/hero-tools.png' %}"
+          class="img-fluid"
+          alt="ECOSA"
+        />
+      </div>
     </div>
-
+  </div>
 </section>
-
 
 <!-- BENEFICIOS -->
 
 <section class="py-4 bg-white">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-3" data-aos="zoom-in">
+        <div class="beneficio-card">
+          <h5>✓ Amplio Catálogo</h5>
 
-    <div class="container">
-
-        <div class="row g-4 text-center">
-
-            <div
-                class="col-md-3"
-                data-aos="zoom-in"
-            >
-
-                <div class="beneficio-card">
-
-                    <h5>✓ Amplio Catálogo</h5>
-
-                    <p class="mb-0">
-
-                        Más de 3.000 productos disponibles.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div
-                class="col-md-3"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-            >
-
-                <div class="beneficio-card">
-
-                    <h5>✓ Marcas Reconocidas</h5>
-
-                    <p class="mb-0">
-
-                        Productos de calidad comprobada.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div
-                class="col-md-3"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-            >
-
-                <div class="beneficio-card">
-
-                    <h5>✓ Atención Comercial</h5>
-
-                    <p class="mb-0">
-
-                        Asesoría personalizada.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div
-                class="col-md-3"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-            >
-
-                <div class="beneficio-card">
-
-                    <h5>✓ Cobertura Nacional</h5>
-
-                    <p class="mb-0">
-
-                        Distribución y atención a nivel nacional.
-
-                    </p>
-
-                </div>
-
-            </div>
-
+          <p class="mb-0">Más de 3.000 productos disponibles.</p>
         </div>
+      </div>
 
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="beneficio-card">
+          <h5>✓ Marcas Reconocidas</h5>
+
+          <p class="mb-0">Productos de calidad comprobada.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="beneficio-card">
+          <h5>✓ Atención Comercial</h5>
+
+          <p class="mb-0">Asesoría personalizada.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="beneficio-card">
+          <h5>✓ Cobertura Nacional</h5>
+
+          <p class="mb-0">Distribución y atención a nivel nacional.</p>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
-
 
 <!-- MARCAS -->
 
-<section class="py-5">
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="badge bg-success mb-3"> MARCAS INTERNACIONALES </span>
 
-    <div class="container">
+      <h2 class="section-title">Trabajamos con marcas reconocidas</h2>
 
-        <h2
-            class="section-title text-center mb-5"
-            data-aos="fade-up"
-        >
-
-            Nuestras Marcas
-
-        </h2>
-
-        <div class="row g-4">
-
-            {% for marca in marcas %}
-
-            <div
-                class="col-lg-2 col-md-4 col-6"
-                data-aos="zoom-in"
-            >
-
-                <div class="card-custom text-center p-4 h-100">
-
-                    {% if marca.logo %}
-
-                    <img
-                        src="{{ marca.logo.url }}"
-                        class="img-fluid mb-3"
-                        style="height:70px; object-fit:contain"
-                    >
-
-                    {% else %}
-
-                    <h5>
-
-                        {{ marca.nombre }}
-
-                    </h5>
-
-                    {% endif %}
-
-                </div>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
+      <p class="text-muted mt-3">
+        Representamos marcas líderes que respaldan la calidad y confianza de
+        nuestros productos.
+      </p>
     </div>
 
-</section>
+    <div class="row g-4 justify-content-center">
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="100"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/truper.png' %}" alt="Marca 1" />
+        </div>
+      </div>
 
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="150"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/coflex.png' %}" alt="Marca 2" />
+        </div>
+      </div>
+
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/ingco.png' %}" alt="Marca 3" />
+        </div>
+      </div>
+
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="250"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/keil2.png' %}" alt="Marca 4" />
+        </div>
+      </div>
+
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/hautine.png' %}" alt="Marca 5" />
+        </div>
+      </div>
+
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="350"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/praktus.png' %}" alt="Marca 6" />
+        </div>
+      </div>
+
+      <div
+        class="col-lg col-md-4 col-6"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      >
+        <div class="marca-card">
+          <img src="{% static 'images/blackj.png' %}" alt="Marca 7" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ESTADISTICAS -->
 
 <section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4" data-aos="fade-right">
+        <small class="text-success fw-bold"> DESDE 1992 </small>
 
-    <div class="container">
+        <h2 class="fw-bold mt-2">
+          Más de tres décadas abasteciendo al sector ferretero.
+        </h2>
 
-        <div class="row align-items-center">
+        <p class="text-muted">
+          ECOSA se ha consolidado como un importador y distribuidor confiable
+          para ferreterías, industrias y constructoras.
+        </p>
+      </div>
 
-            <div
-                class="col-lg-4"
-                data-aos="fade-right"
-            >
+      <div class="col-lg-8">
+        <div class="row text-center">
+          <div class="col-md-3" data-aos="fade-up">
+            <h2 class="text-success fw-bold">+30</h2>
 
-                <small class="text-success fw-bold">
+            <p>Años de experiencia</p>
+          </div>
 
-                    DESDE 1992
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-success fw-bold">+3000</h2>
 
-                </small>
+            <p>Productos disponibles</p>
+          </div>
 
-                <h2 class="fw-bold mt-2">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-success fw-bold">+20</h2>
 
-                    Más de tres décadas abasteciendo al sector ferretero.
+            <p>Marcas internacionales</p>
+          </div>
 
-                </h2>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="text-success fw-bold">100%</h2>
 
-                <p class="text-muted">
-
-                    ECOSA se ha consolidado como un importador y distribuidor
-                    confiable para ferreterías, industrias y constructoras.
-
-                </p>
-
-            </div>
-
-            <div class="col-lg-8">
-
-                <div class="row text-center">
-
-                    <div
-                        class="col-md-3"
-                        data-aos="fade-up"
-                    >
-
-                        <h2 class="text-success fw-bold">
-
-                            +30
-
-                        </h2>
-
-                        <p>Años de experiencia</p>
-
-                    </div>
-
-                    <div
-                        class="col-md-3"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                    >
-
-                        <h2 class="text-success fw-bold">
-
-                            +3000
-
-                        </h2>
-
-                        <p>Productos disponibles</p>
-
-                    </div>
-
-                    <div
-                        class="col-md-3"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                    >
-
-                        <h2 class="text-success fw-bold">
-
-                            +20
-
-                        </h2>
-
-                        <p>Marcas internacionales</p>
-
-                    </div>
-
-                    <div
-                        class="col-md-3"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                    >
-
-                        <h2 class="text-success fw-bold">
-
-                            100%
-
-                        </h2>
-
-                        <p>Atención especializada</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+            <p>Atención especializada</p>
+          </div>
         </div>
-
+      </div>
     </div>
-
+  </div>
 </section>
-
 
 <!-- BANNER -->
 
-<section
-    class="catalogo-banner-home py-5"
-    data-aos="zoom-in"
->
-
-    <div class="container">
-
-        <a
-            href="{% url 'catalogo' %}"
-            class="catalogo-link"
-        >
-
-            <img
-                src="{% static 'images/catalogo-banner.png' %}"
-                alt="Catálogo ECOSA"
-                class="img-fluid w-100 catalogo-banner-img"
-            >
-
-        </a>
-
-    </div>
-
+<section class="catalogo-banner-home py-5" data-aos="zoom-in">
+  <div class="container">
+    <a href="{% url 'catalogo' %}" class="catalogo-link">
+      <img
+        src="{% static 'images/catalogo-banner.png' %}"
+        alt="Catálogo ECOSA"
+        class="img-fluid w-100 catalogo-banner-img"
+      />
+    </a>
+  </div>
 </section>
-
 
 <!-- CONTACTO -->
 
-<section
-    id="contacto"
-    class="py-5"
->
+<section id="contacto" class="py-5">
+  <div class="container">
+    <div class="card-custom p-5" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h3>¿Necesitas ayuda para encontrar un producto?</h3>
 
-    <div class="container">
-
-        <div
-            class="card-custom p-5"
-            data-aos="fade-up"
-        >
-
-            <div class="row align-items-center">
-
-                <div class="col-lg-8">
-
-                    <h3>
-
-                        ¿Necesitas ayuda para encontrar un producto?
-
-                    </h3>
-
-                    <p class="text-muted mb-0">
-
-                        Nuestro equipo comercial está disponible para ayudarte
-                        y asesorarte.
-
-                    </p>
-
-                </div>
-
-                <div class="col-lg-4 text-end">
-
-                    <a
-                        href="https://wa.me/56948108449"
-                        target="_blank"
-                        class="btn btn-success me-2"
-                    >
-
-                        Hablar con un asesor
-
-                    </a>
-
-                    <a
-                        href="mailto:rrwebworks@gmail.com"
-                        class="btn btn-outline-success"
-                    >
-
-                        Solicitar información
-
-                    </a>
-
-                </div>
-
-            </div>
-
+          <p class="text-muted mb-0">
+            Nuestro equipo comercial está disponible para ayudarte y asesorarte.
+          </p>
         </div>
 
-    </div>
+        <div class="col-lg-4 text-end">
+          <a
+            href="https://wa.me/56948108449"
+            target="_blank"
+            class="btn btn-success me-2"
+          >
+            Hablar con un asesor
+          </a>
 
+          <a href="mailto:rrwebworks@gmail.com" class="btn btn-outline-success">
+            Solicitar información
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock %}
-

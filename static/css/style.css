@@ -454,3 +454,43 @@ body {
 .cta-final .btn:hover {
     transform: translateY(-3px);
 }
+/* ==========================
+   MARCAS HOME PREMIUM
+========================== */
+
+.marca-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    height: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+
+    transition: .35s ease;
+}
+
+.marca-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.marca-card img {
+    max-height: 70px;
+    max-width: 100%;
+    object-fit: contain;
+
+    
+    opacity: .85;
+
+    transition: .35s ease;
+}
+
+.marca-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
