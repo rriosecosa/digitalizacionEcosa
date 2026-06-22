@@ -131,6 +131,13 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-MEDIA_URL = '/media/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# Login
+
+LOGIN_URL = '/catalogo/login/'
+LOGIN_REDIRECT_URL = '/catalogo/catalogo-admin/'
+LOGOUT_REDIRECT_URL = '/catalogo/'
+

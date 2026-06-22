@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h1 class="fw-bold mb-1">
+                Gestión de Catálogo
+            </h1>
+
+            <p class="text-muted mb-0">
+                Administra descripciones y productos del catálogo PDF
+            </p>
+        </div>
+
+        <a
+            href="{% url 'dashboard_catalogo' %}"
+            class="btn btn-secondary"
+        >
+            ← Volver
+        </a>
+
+    </div>
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <form method="get">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <input
+                            type="text"
+                            name="q"
+                            class="form-control"
+                            placeholder="Buscar código o producto..."
+                            value="{{ request.GET.q }}"
+                        >
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <select
+                            name="estado"
+                            class="form-select"
+                        >
+
+                            <option value="">
+                                Todos
+                            </option>
+
+                            <option
+                                value="sin_foto"
+                                {% if request.GET.estado == 'sin_foto' %}
+                                selected
+                                {% endif %}
+                            >
+                                Sin Foto
+                            </option>
+
+                            <option
+                                value="sin_descripcion"
+                                {% if request.GET.estado == 'sin_descripcion' %}
+                                selected
+                                {% endif %}
+                            >
+                                Sin Descripción
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <button
+                            class="btn btn-success w-100"
+                        >
+                            Buscar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle mb-0">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Imagen</th>
+
+                        <th>Código</th>
+
+                        <th>Producto</th>
+
+                        <th>Categoría</th>
+
+                        <th>Marca</th>
+
+                        <th>Estado</th>
+
+                        <th width="120">
+                            Acción
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for item in productos_catalogo %}
+
+                    <tr>
+
+                        <td>
+
+                            {% if item.producto.imagen %}
+
+                                <img
+                                    src="{{ item.producto.imagen_url }}"
+                                    width="60"
+                                    height="60"
+                                    class="rounded border"
+                                    style="object-fit: cover;"
+                                    alt="{{ item.producto.titulo }}"
+                                >
+
+                            {% else %}
+
+                                <div
+                                    class="bg-light border rounded d-flex align-items-center justify-content-center"
+                                    style="width:60px;height:60px;"
+                                >
+                                    📷
+                                </div>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            <strong>
+                                {{ item.producto.codigo }}
+                            </strong>
+
+                        </td>
+
+                        <td>
+
+                            {{ item.producto.titulo }}
+
+                        </td>
+
+                        <td>
+
+                            {{ item.producto.familia }}
+
+                        </td>
+
+                        <td>
+
+                            {{ item.producto.proveedor }}
+
+                        </td>
+
+                        <td>
+
+                            {% if item.producto.imagen and item.descripcion_catalogo %}
+
+                                <span class="badge bg-success">
+                                    Completo
+                                </span>
+
+                            {% elif item.producto.imagen or item.descripcion_catalogo %}
+
+                                <span class="badge bg-warning text-dark">
+                                    Parcial
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-danger">
+                                    Pendiente
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                        <td>
+
+                            <a
+                                href="{% url 'editar_producto_catalogo' item.pk %}"
+                                class="btn btn-primary btn-sm"
+                            >
+                                Editar
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+
+                        <td colspan="7">
+
+                            <div class="text-center py-4">
+
+                                No se encontraron productos.
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    {% if is_paginated %}
+
+    <nav class="mt-4">
+
+        <ul class="pagination justify-content-center">
+
+            {% if page_obj.has_previous %}
+
+                <li class="page-item">
+
+                    <a
+                        class="page-link"
+                        href="?page={{ page_obj.previous_page_number }}"
+                    >
+                        Anterior
+                    </a>
+
+                </li>
+
+            {% endif %}
+
+            <li class="page-item active">
+
+                <span class="page-link">
+
+                    Página {{ page_obj.number }}
+                    de
+                    {{ page_obj.paginator.num_pages }}
+
+                </span>
+
+            </li>
+
+            {% if page_obj.has_next %}
+
+                <li class="page-item">
+
+                    <a
+                        class="page-link"
+                        href="?page={{ page_obj.next_page_number }}"
+                    >
+                        Siguiente
+                    </a>
+
+                </li>
+
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

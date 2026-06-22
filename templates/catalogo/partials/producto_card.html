@@ -4,64 +4,41 @@
 
     <div class="product-image">
 
-        {% if producto.imagen %}
-
-            <img
-                src="{{ producto.imagen }}"
-                alt="{{ producto.titulo }}"
-            >
-
-        {% else %}
-
-            <img
-                src="{% static 'images/producto-default.png' %}"
-                alt="{{ producto.titulo }}"
-            >
-
-        {% endif %}
+        <img
+            src="{{ producto.imagen_url }}"
+            alt="{{ producto.titulo }}"
+        >
 
     </div>
 
     <div class="product-body">
 
         <span class="product-category">
-
             {{ producto.familia.titulo }}
-
         </span>
 
         <div class="product-brand">
-
             {{ producto.proveedor.marca }}
-
         </div>
 
         <h6 class="product-title">
-
             {{ producto.titulo }}
-
         </h6>
 
         <div class="product-code">
-
             Código: {{ producto.codigo }}
-
         </div>
 
         {% if producto.stock > 0 %}
 
             <span class="badge bg-success mb-3">
-
                 Disponible
-
             </span>
 
         {% else %}
 
             <span class="badge bg-secondary mb-3">
-
                 Consultar
-
             </span>
 
         {% endif %}
@@ -70,9 +47,7 @@
             href="{% url 'detalle_producto' producto.id %}"
             class="btn btn-ecosa w-100 mt-auto"
         >
-
             Ver Detalle
-
         </a>
 
     </div>

@@ -21,20 +21,37 @@
           <a class="nav-link active" href="/">Inicio</a>
         </li>
 
-     
-
         <li class="nav-item">
-          <a class="nav-link active" href="/catalogo/"> Catálogo </a>
+          <a class="nav-link" href="/catalogo/">
+            Catálogo
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'nosotros' %}"> Nosotros </a>
+          <a class="nav-link" href="{% url 'nosotros' %}">
+            Nosotros
+          </a>
         </li>
-
-        
       </ul>
 
-      <a href="/catalogo/" class="btn btn-ecosa"> Ver Catálogo </a>
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+
+        <a
+          href="/catalogo/"
+          class="btn btn-ecosa btn-sm px-3"
+        >
+          Ver Catálogo
+        </a>
+
+        <a
+          href="/catalogo/login/"
+          class="btn btn-outline-secondary btn-sm px-3"
+        >
+          Administrador
+        </a>
+
+      </div>
+
     </div>
   </div>
 </nav>

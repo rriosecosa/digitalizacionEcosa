@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="mb-4">
+        Dashboard Catálogo ECOSA
+    </h1>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ total_productos }}</h2>
+
+                    <p class="mb-0">
+                        Productos
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ total_categorias }}</h2>
+
+                    <p class="mb-0">
+                        Categorías
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ total_marcas }}</h2>
+
+                    <p class="mb-0">
+                        Marcas
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+    <h3 class="mb-4">
+        Estado del Catálogo
+    </h3>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="card border-success">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ con_imagen }}</h2>
+
+                    <p class="text-success mb-0">
+                        Con Imagen
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-danger">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ sin_imagen }}</h2>
+
+                    <p class="text-danger mb-0">
+                        Sin Imagen
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-success">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ con_descripcion }}</h2>
+
+                    <p class="text-success mb-0">
+                        Con Descripción
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-danger">
+
+                <div class="card-body text-center">
+
+                    <h2>{{ sin_descripcion }}</h2>
+
+                    <p class="text-danger mb-0">
+                        Sin Descripción
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-5">
+
+        <h4 class="mb-3">
+            Avance del Proyecto
+        </h4>
+
+        <label class="fw-bold">
+            Imágenes ({{ porcentaje_imagenes }}%)
+        </label>
+
+        <div class="progress mb-4">
+
+            <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: {{ porcentaje_imagenes }}%;"
+            >
+                {{ porcentaje_imagenes }}%
+            </div>
+
+        </div>
+
+        <label class="fw-bold">
+            Descripciones ({{ porcentaje_descripciones }}%)
+        </label>
+
+        <div class="progress">
+
+            <div
+                class="progress-bar bg-primary"
+                role="progressbar"
+                style="width: {{ porcentaje_descripciones }}%;"
+            >
+                {{ porcentaje_descripciones }}%
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-5">
+
+        <a
+            href="{% url 'productos_catalogo' %}"
+            class="btn btn-primary btn-lg"
+        >
+            Gestionar Productos Catálogo
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

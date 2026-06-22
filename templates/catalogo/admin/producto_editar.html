@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h2 class="mb-4">
+
+                        {{ object.producto.codigo }}
+
+                        -
+
+                        {{ object.producto.titulo }}
+
+                    </h2>
+
+                    <form
+                        method="post"
+                        enctype="multipart/form-data"
+                    >
+
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Imagen Catálogo
+                            </label>
+
+                            {{ form.imagen_catalogo }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Referencia
+                            </label>
+
+                            {{ form.referencia }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Descripción
+                            </label>
+
+                            {{ form.descripcion_catalogo }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Especificaciones
+                            </label>
+
+                            {{ form.especificaciones }}
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Orden Catálogo
+                            </label>
+
+                            {{ form.orden_catalogo }}
+
+                        </div>
+
+                        <div class="form-check mb-4">
+
+                            {{ form.visible_catalogo }}
+
+                            <label class="form-check-label">
+
+                                Visible en catálogo
+
+                            </label>
+
+                        </div>
+
+                        <button
+                            class="btn btn-success"
+                        >
+                            Guardar
+                        </button>
+
+                        <a
+                            href="{% url 'productos_catalogo' %}"
+                            class="btn btn-secondary"
+                        >
+                            Volver
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

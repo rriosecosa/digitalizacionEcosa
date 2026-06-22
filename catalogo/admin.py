@@ -5,7 +5,8 @@ from .models import (
     Familia,
     Proveedor,
     ProductoGrupo,
-    ProductoMedida
+    ProductoMedida,
+    ProductoCatalogo
 )
 
 
@@ -86,3 +87,35 @@ class ProductoMedidaAdmin(admin.ModelAdmin):
         'codigo',
         'descripcion'
     )
+
+
+@admin.register(ProductoCatalogo)
+class ProductoCatalogoAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'producto',
+        'referencia',
+        'orden_catalogo',
+        'visible_catalogo',
+        'fecha_actualizacion'
+    )
+
+    list_filter = (
+        'visible_catalogo',
+    )
+
+    search_fields = (
+        'producto__codigo',
+        'producto__titulo',
+        'referencia'
+    )
+
+    ordering = (
+        'orden_catalogo',
+    )
+
+    autocomplete_fields = (
+        'producto',
+    )
+
+    list_per_page = 50
