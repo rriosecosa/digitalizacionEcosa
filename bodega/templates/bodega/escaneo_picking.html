@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Picking Bodega - Control Operacional</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      /* CSS de Impresión optimizado para hojas A4 o comprobantes de bodega */
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background-color: #fff;
+          font-size: 14px;
+        }
+        .card {
+          border: none !important;
+          shadow: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container mt-4">
+      <div
+        class="d-flex justify-content-between align-items-center mb-3 no-print"
+      >
+        <a href="#" class="btn btn-sm btn-outline-secondary"
+          ><i class="bi bi-arrow-left"></i> Volver al Panel</a
+        >
+        <div>
+          <button
+            class="btn btn-outline-dark me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#modalGlosa"
+          >
+            <i class="bi bi-file-earmark-text"></i> Ver Glosa Interna
+          </button>
+          <button class="btn btn-primary" onclick="window.print()">
+            <i class="bi bi-printer"></i> Imprimir Hoja de Ruta
+          </button>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>
+                Documento de Control Interno:
+                <span class="text-primary">F8-{{ f8.id }}</span>
+              </h5>
+              <p class="mb-1">
+                <strong>Origen:</strong> Bodega {{ f8.get_bodega_codigo_display
+                }}
+              </p>
+              <p class="mb-0">
+                <strong>Asociado a Nota Venta:</strong> #{{
+                f8.nota_venta_numero.n_nota_venta }}
+              </p>
+            </div>
+            <div class="col-md-6 text-md-end mt-2 mt-md-0">
+              <p class="mb-1">
+                <strong>Fecha Emisión:</strong> {{ f8.creado_el|date:"d/m/Y H:i"
+                }}
+              </p>
+              <p class="mb-0">
+                <strong>Operario Responsable:</strong> Central de Bodegas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white py-3">
+          <h6 class="mb-0 text-secondary fw-bold">
+            Escanear y Validar Productos en Estante
+          </h6>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table
+              class="table table-hover align-middle mb-0"
+              id="tabla-picking"
+            >
+              <thead class="table-light">
+                <tr>
+                  <th class="ps-3">Código e Ítem (Descripción)</th>
+                  <th class="text-center" style="width: 120px">Pedido</th>
+                  <th class="text-center" style="width: 120px">Escaneado</th>
+                  <th class="text-center" style="width: 120px">Diferencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="row-prod-1">
+                  <td class="ps-3">
+                    <span class="badge bg-secondary me-2">01-12-05</span>
+                    <strong>Silicona Neutra Transparente Multiuso</strong>
+                  </td>
+                  <td class="text-center font-monospace fs-5">10</td>
+                  <td
+                    class="text-center font-monospace fs-5 fw-bold text-success"
+                    id="escan-1"
+                  >
+                    0
+                  </td>
+                  <td
+                    class="text-center font-monospace fs-5 fw-bold text-danger"
+                    id="dif-1"
+                  >
+                    10
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-end mb-5 no-print">
+        <button class="btn btn-success btn-lg px-5" id="btn-finalizar-picking">
+          Siguiente: Avanzar a Envasado x Bultos
+          <i class="bi bi-box-seam ms-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalGlosa" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Glosa del Documento</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-content p-3">
+            <p>
+              <strong>Observación de Ruta:</strong> Despacho prioritario vía
+              Transporte seleccionado por el cliente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
