@@ -1,5 +1,4 @@
-from django.apps import AppConfig
-
+from django.apps import AppConfi
 
 class BodegaConfig(AppConfig):
     name = 'bodega'
